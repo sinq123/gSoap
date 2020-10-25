@@ -1,0 +1,1125 @@
+  <?xml version="1.0" encoding="utf-8" ?> 
+- <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.gc8848.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.gc8848.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+- <wsdl:types>
++ <s:schema elementFormDefault="qualified" targetNamespace="http://www.gc8848.com/">
++ <s:element name="Sync">
+- <s:complexType>
++ <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="SyncResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="SyncResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
++ <s:complexType name="RetValue">
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="ErrNum" type="s:int" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" /> 
+  <s:element minOccurs="1" maxOccurs="1" name="InternalErrNum" type="s:int" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="InternalErrMsg" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="TipMessage" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+- <s:element name="GetInspectQueueByDate">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetInspectQueueByDateResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="GetInspectQueueByDateResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetInspectQueueByPlateID">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="PlateID" type="s:string" /> 
+  <s:element minOccurs="1" maxOccurs="1" name="PlateType" type="s:int" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetInspectQueueByPlateIDResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="GetInspectQueueByPlateIDResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="AbortInspect">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="1" maxOccurs="1" name="Reason" type="s:int" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="AbortInspectResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="AbortInspectResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="BeginRecord">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="LineID" type="s:long" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="BeginRecordResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="BeginRecordResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="EndRecord">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="EndRecordResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="EndRecordResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="BeginInspect">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="LineID" type="s:long" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="1" maxOccurs="1" name="DriverID" type="s:long" /> 
+  <s:element minOccurs="1" maxOccurs="1" name="OperatorID" type="s:long" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="InspectParam" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="BeginInspectResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="BeginInspectResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetLimit">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetLimitResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="GetLimitResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="TakePhoto">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="LineID" type="s:long" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="1" maxOccurs="1" name="PicCode" type="s:int" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="TakePhotoResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="TakePhotoResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="WJTakePhoto">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="ChannelID" type="s:long" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="1" maxOccurs="1" name="PicCode" type="s:int" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="WJTakePhotoResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="WJTakePhotoResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="StopInspect">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="StopInspectResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="StopInspectResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="EndInspect">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="EndInspectResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="EndInspectResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="UploadSelfTestData">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="LineID" type="s:long" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="ResultData" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="UploadSelfTestDataResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="UploadSelfTestDataResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="UploadRealtimeData">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="RealtimeData" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="UploadRealtimeDataResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="UploadRealtimeDataResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetInspectionInfo">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetInspectionInfoResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="GetInspectionInfoResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="BeginCalibrate">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="LineID" type="s:long" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="BeginCalibrateResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="BeginCalibrateResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="UploadCalibrateData">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="LineID" type="s:long" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="ResultData" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="UploadCalibrateDataResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="UploadCalibrateDataResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="EndCalibrate">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="LineID" type="s:long" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="EndCalibrateResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="EndCalibrateResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="TestPhoto">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="LineID" type="s:long" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="TestPhotoResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="TestPhotoResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="FuelEvaporationInspect">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="ChannelID" type="s:long" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="RYZFData" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="FuelEvaporationInspectResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="FuelEvaporationInspectResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetInspectParams">
+  <s:complexType /> 
+  </s:element>
+- <s:element name="GetInspectParamsResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="GetInspectParamsResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetOtherInspectQueueByPlateID">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="PlateID" type="s:string" /> 
+  <s:element minOccurs="1" maxOccurs="1" name="PlateType" type="s:int" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="QueueType" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetOtherInspectQueueByPlateIDResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="GetOtherInspectQueueByPlateIDResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetOtherInspectQueueByDate">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="QueueType" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="GetOtherInspectQueueByDateResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="GetOtherInspectQueueByDateResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="OBDInspect">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="LineID" type="s:long" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="InspectID" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="sOBDData" type="s:string" /> 
+  <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="OBDInspectResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="OBDInspectResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="OBDTXCheck">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="0" maxOccurs="1" name="VIN" type="s:string" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+- <s:element name="OBDTXCheckResponse">
+- <s:complexType>
+- <s:sequence>
+  <s:element minOccurs="1" maxOccurs="1" name="OBDTXCheckResult" type="tns:RetValue" /> 
+  </s:sequence>
+  </s:complexType>
+  </s:element>
+  </s:schema>
+  </wsdl:types>
+- <wsdl:message name="SyncSoapIn">
+  <wsdl:part name="parameters" element="tns:Sync" /> 
+  </wsdl:message>
+- <wsdl:message name="SyncSoapOut">
+  <wsdl:part name="parameters" element="tns:SyncResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="GetInspectQueueByDateSoapIn">
+  <wsdl:part name="parameters" element="tns:GetInspectQueueByDate" /> 
+  </wsdl:message>
+- <wsdl:message name="GetInspectQueueByDateSoapOut">
+  <wsdl:part name="parameters" element="tns:GetInspectQueueByDateResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="GetInspectQueueByPlateIDSoapIn">
+  <wsdl:part name="parameters" element="tns:GetInspectQueueByPlateID" /> 
+  </wsdl:message>
+- <wsdl:message name="GetInspectQueueByPlateIDSoapOut">
+  <wsdl:part name="parameters" element="tns:GetInspectQueueByPlateIDResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="AbortInspectSoapIn">
+  <wsdl:part name="parameters" element="tns:AbortInspect" /> 
+  </wsdl:message>
+- <wsdl:message name="AbortInspectSoapOut">
+  <wsdl:part name="parameters" element="tns:AbortInspectResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="BeginRecordSoapIn">
+  <wsdl:part name="parameters" element="tns:BeginRecord" /> 
+  </wsdl:message>
+- <wsdl:message name="BeginRecordSoapOut">
+  <wsdl:part name="parameters" element="tns:BeginRecordResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="EndRecordSoapIn">
+  <wsdl:part name="parameters" element="tns:EndRecord" /> 
+  </wsdl:message>
+- <wsdl:message name="EndRecordSoapOut">
+  <wsdl:part name="parameters" element="tns:EndRecordResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="BeginInspectSoapIn">
+  <wsdl:part name="parameters" element="tns:BeginInspect" /> 
+  </wsdl:message>
+- <wsdl:message name="BeginInspectSoapOut">
+  <wsdl:part name="parameters" element="tns:BeginInspectResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="GetLimitSoapIn">
+  <wsdl:part name="parameters" element="tns:GetLimit" /> 
+  </wsdl:message>
+- <wsdl:message name="GetLimitSoapOut">
+  <wsdl:part name="parameters" element="tns:GetLimitResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="TakePhotoSoapIn">
+  <wsdl:part name="parameters" element="tns:TakePhoto" /> 
+  </wsdl:message>
+- <wsdl:message name="TakePhotoSoapOut">
+  <wsdl:part name="parameters" element="tns:TakePhotoResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="WJTakePhotoSoapIn">
+  <wsdl:part name="parameters" element="tns:WJTakePhoto" /> 
+  </wsdl:message>
+- <wsdl:message name="WJTakePhotoSoapOut">
+  <wsdl:part name="parameters" element="tns:WJTakePhotoResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="StopInspectSoapIn">
+  <wsdl:part name="parameters" element="tns:StopInspect" /> 
+  </wsdl:message>
+- <wsdl:message name="StopInspectSoapOut">
+  <wsdl:part name="parameters" element="tns:StopInspectResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="EndInspectSoapIn">
+  <wsdl:part name="parameters" element="tns:EndInspect" /> 
+  </wsdl:message>
+- <wsdl:message name="EndInspectSoapOut">
+  <wsdl:part name="parameters" element="tns:EndInspectResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="UploadSelfTestDataSoapIn">
+  <wsdl:part name="parameters" element="tns:UploadSelfTestData" /> 
+  </wsdl:message>
+- <wsdl:message name="UploadSelfTestDataSoapOut">
+  <wsdl:part name="parameters" element="tns:UploadSelfTestDataResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="UploadRealtimeDataSoapIn">
+  <wsdl:part name="parameters" element="tns:UploadRealtimeData" /> 
+  </wsdl:message>
+- <wsdl:message name="UploadRealtimeDataSoapOut">
+  <wsdl:part name="parameters" element="tns:UploadRealtimeDataResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="GetInspectionInfoSoapIn">
+  <wsdl:part name="parameters" element="tns:GetInspectionInfo" /> 
+  </wsdl:message>
+- <wsdl:message name="GetInspectionInfoSoapOut">
+  <wsdl:part name="parameters" element="tns:GetInspectionInfoResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="BeginCalibrateSoapIn">
+  <wsdl:part name="parameters" element="tns:BeginCalibrate" /> 
+  </wsdl:message>
+- <wsdl:message name="BeginCalibrateSoapOut">
+  <wsdl:part name="parameters" element="tns:BeginCalibrateResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="UploadCalibrateDataSoapIn">
+  <wsdl:part name="parameters" element="tns:UploadCalibrateData" /> 
+  </wsdl:message>
+- <wsdl:message name="UploadCalibrateDataSoapOut">
+  <wsdl:part name="parameters" element="tns:UploadCalibrateDataResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="EndCalibrateSoapIn">
+  <wsdl:part name="parameters" element="tns:EndCalibrate" /> 
+  </wsdl:message>
+- <wsdl:message name="EndCalibrateSoapOut">
+  <wsdl:part name="parameters" element="tns:EndCalibrateResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="TestPhotoSoapIn">
+  <wsdl:part name="parameters" element="tns:TestPhoto" /> 
+  </wsdl:message>
+- <wsdl:message name="TestPhotoSoapOut">
+  <wsdl:part name="parameters" element="tns:TestPhotoResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="FuelEvaporationInspectSoapIn">
+  <wsdl:part name="parameters" element="tns:FuelEvaporationInspect" /> 
+  </wsdl:message>
+- <wsdl:message name="FuelEvaporationInspectSoapOut">
+  <wsdl:part name="parameters" element="tns:FuelEvaporationInspectResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="GetInspectParamsSoapIn">
+  <wsdl:part name="parameters" element="tns:GetInspectParams" /> 
+  </wsdl:message>
+- <wsdl:message name="GetInspectParamsSoapOut">
+  <wsdl:part name="parameters" element="tns:GetInspectParamsResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="GetOtherInspectQueueByPlateIDSoapIn">
+  <wsdl:part name="parameters" element="tns:GetOtherInspectQueueByPlateID" /> 
+  </wsdl:message>
+- <wsdl:message name="GetOtherInspectQueueByPlateIDSoapOut">
+  <wsdl:part name="parameters" element="tns:GetOtherInspectQueueByPlateIDResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="GetOtherInspectQueueByDateSoapIn">
+  <wsdl:part name="parameters" element="tns:GetOtherInspectQueueByDate" /> 
+  </wsdl:message>
+- <wsdl:message name="GetOtherInspectQueueByDateSoapOut">
+  <wsdl:part name="parameters" element="tns:GetOtherInspectQueueByDateResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="OBDInspectSoapIn">
+  <wsdl:part name="parameters" element="tns:OBDInspect" /> 
+  </wsdl:message>
+- <wsdl:message name="OBDInspectSoapOut">
+  <wsdl:part name="parameters" element="tns:OBDInspectResponse" /> 
+  </wsdl:message>
+- <wsdl:message name="OBDTXCheckSoapIn">
+  <wsdl:part name="parameters" element="tns:OBDTXCheck" /> 
+  </wsdl:message>
+- <wsdl:message name="OBDTXCheckSoapOut">
+  <wsdl:part name="parameters" element="tns:OBDTXCheckResponse" /> 
+  </wsdl:message>
+- <wsdl:portType name="ServiceSoap">
+- <wsdl:operation name="Sync">
+  <wsdl:input message="tns:SyncSoapIn" /> 
+  <wsdl:output message="tns:SyncSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectQueueByDate">
+  <wsdl:input message="tns:GetInspectQueueByDateSoapIn" /> 
+  <wsdl:output message="tns:GetInspectQueueByDateSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectQueueByPlateID">
+  <wsdl:input message="tns:GetInspectQueueByPlateIDSoapIn" /> 
+  <wsdl:output message="tns:GetInspectQueueByPlateIDSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="AbortInspect">
+  <wsdl:input message="tns:AbortInspectSoapIn" /> 
+  <wsdl:output message="tns:AbortInspectSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="BeginRecord">
+  <wsdl:input message="tns:BeginRecordSoapIn" /> 
+  <wsdl:output message="tns:BeginRecordSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="EndRecord">
+  <wsdl:input message="tns:EndRecordSoapIn" /> 
+  <wsdl:output message="tns:EndRecordSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="BeginInspect">
+  <wsdl:input message="tns:BeginInspectSoapIn" /> 
+  <wsdl:output message="tns:BeginInspectSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="GetLimit">
+  <wsdl:input message="tns:GetLimitSoapIn" /> 
+  <wsdl:output message="tns:GetLimitSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="TakePhoto">
+  <wsdl:input message="tns:TakePhotoSoapIn" /> 
+  <wsdl:output message="tns:TakePhotoSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="WJTakePhoto">
+  <wsdl:input message="tns:WJTakePhotoSoapIn" /> 
+  <wsdl:output message="tns:WJTakePhotoSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="StopInspect">
+  <wsdl:input message="tns:StopInspectSoapIn" /> 
+  <wsdl:output message="tns:StopInspectSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="EndInspect">
+  <wsdl:input message="tns:EndInspectSoapIn" /> 
+  <wsdl:output message="tns:EndInspectSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="UploadSelfTestData">
+  <wsdl:input message="tns:UploadSelfTestDataSoapIn" /> 
+  <wsdl:output message="tns:UploadSelfTestDataSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="UploadRealtimeData">
+  <wsdl:input message="tns:UploadRealtimeDataSoapIn" /> 
+  <wsdl:output message="tns:UploadRealtimeDataSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectionInfo">
+  <wsdl:input message="tns:GetInspectionInfoSoapIn" /> 
+  <wsdl:output message="tns:GetInspectionInfoSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="BeginCalibrate">
+  <wsdl:input message="tns:BeginCalibrateSoapIn" /> 
+  <wsdl:output message="tns:BeginCalibrateSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="UploadCalibrateData">
+  <wsdl:input message="tns:UploadCalibrateDataSoapIn" /> 
+  <wsdl:output message="tns:UploadCalibrateDataSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="EndCalibrate">
+  <wsdl:input message="tns:EndCalibrateSoapIn" /> 
+  <wsdl:output message="tns:EndCalibrateSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="TestPhoto">
+  <wsdl:input message="tns:TestPhotoSoapIn" /> 
+  <wsdl:output message="tns:TestPhotoSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="FuelEvaporationInspect">
+  <wsdl:input message="tns:FuelEvaporationInspectSoapIn" /> 
+  <wsdl:output message="tns:FuelEvaporationInspectSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectParams">
+  <wsdl:input message="tns:GetInspectParamsSoapIn" /> 
+  <wsdl:output message="tns:GetInspectParamsSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="GetOtherInspectQueueByPlateID">
+  <wsdl:input message="tns:GetOtherInspectQueueByPlateIDSoapIn" /> 
+  <wsdl:output message="tns:GetOtherInspectQueueByPlateIDSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="GetOtherInspectQueueByDate">
+  <wsdl:input message="tns:GetOtherInspectQueueByDateSoapIn" /> 
+  <wsdl:output message="tns:GetOtherInspectQueueByDateSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="OBDInspect">
+  <wsdl:input message="tns:OBDInspectSoapIn" /> 
+  <wsdl:output message="tns:OBDInspectSoapOut" /> 
+  </wsdl:operation>
+- <wsdl:operation name="OBDTXCheck">
+  <wsdl:input message="tns:OBDTXCheckSoapIn" /> 
+  <wsdl:output message="tns:OBDTXCheckSoapOut" /> 
+  </wsdl:operation>
+  </wsdl:portType>
+- <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+  <soap:binding transport="http://schemas.xmlsoap.org/soap/http" /> 
+- <wsdl:operation name="Sync">
+  <soap:operation soapAction="http://www.gc8848.com/Sync" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectQueueByDate">
+  <soap:operation soapAction="http://www.gc8848.com/GetInspectQueueByDate" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectQueueByPlateID">
+  <soap:operation soapAction="http://www.gc8848.com/GetInspectQueueByPlateID" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="AbortInspect">
+  <soap:operation soapAction="http://www.gc8848.com/AbortInspect" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="BeginRecord">
+  <soap:operation soapAction="http://www.gc8848.com/BeginRecord" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="EndRecord">
+  <soap:operation soapAction="http://www.gc8848.com/EndRecord" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="BeginInspect">
+  <soap:operation soapAction="http://www.gc8848.com/BeginInspect" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetLimit">
+  <soap:operation soapAction="http://www.gc8848.com/GetLimit" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="TakePhoto">
+  <soap:operation soapAction="http://www.gc8848.com/TakePhoto" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="WJTakePhoto">
+  <soap:operation soapAction="http://www.gc8848.com/WJTakePhoto" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="StopInspect">
+  <soap:operation soapAction="http://www.gc8848.com/StopInspect" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="EndInspect">
+  <soap:operation soapAction="http://www.gc8848.com/EndInspect" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="UploadSelfTestData">
+  <soap:operation soapAction="http://www.gc8848.com/UploadSelfTestData" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="UploadRealtimeData">
+  <soap:operation soapAction="http://www.gc8848.com/UploadRealtimeData" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectionInfo">
+  <soap:operation soapAction="http://www.gc8848.com/GetInspectionInfo" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="BeginCalibrate">
+  <soap:operation soapAction="http://www.gc8848.com/BeginCalibrate" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="UploadCalibrateData">
+  <soap:operation soapAction="http://www.gc8848.com/UploadCalibrateData" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="EndCalibrate">
+  <soap:operation soapAction="http://www.gc8848.com/EndCalibrate" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="TestPhoto">
+  <soap:operation soapAction="http://www.gc8848.com/TestPhoto" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="FuelEvaporationInspect">
+  <soap:operation soapAction="http://www.gc8848.com/FuelEvaporationInspect" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectParams">
+  <soap:operation soapAction="http://www.gc8848.com/GetInspectParams" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetOtherInspectQueueByPlateID">
+  <soap:operation soapAction="http://www.gc8848.com/GetOtherInspectQueueByPlateID" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetOtherInspectQueueByDate">
+  <soap:operation soapAction="http://www.gc8848.com/GetOtherInspectQueueByDate" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="OBDInspect">
+  <soap:operation soapAction="http://www.gc8848.com/OBDInspect" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="OBDTXCheck">
+  <soap:operation soapAction="http://www.gc8848.com/OBDTXCheck" style="document" /> 
+- <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+  </wsdl:binding>
+- <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+  <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" /> 
+- <wsdl:operation name="Sync">
+  <soap12:operation soapAction="http://www.gc8848.com/Sync" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectQueueByDate">
+  <soap12:operation soapAction="http://www.gc8848.com/GetInspectQueueByDate" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectQueueByPlateID">
+  <soap12:operation soapAction="http://www.gc8848.com/GetInspectQueueByPlateID" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="AbortInspect">
+  <soap12:operation soapAction="http://www.gc8848.com/AbortInspect" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="BeginRecord">
+  <soap12:operation soapAction="http://www.gc8848.com/BeginRecord" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="EndRecord">
+  <soap12:operation soapAction="http://www.gc8848.com/EndRecord" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="BeginInspect">
+  <soap12:operation soapAction="http://www.gc8848.com/BeginInspect" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetLimit">
+  <soap12:operation soapAction="http://www.gc8848.com/GetLimit" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="TakePhoto">
+  <soap12:operation soapAction="http://www.gc8848.com/TakePhoto" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="WJTakePhoto">
+  <soap12:operation soapAction="http://www.gc8848.com/WJTakePhoto" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="StopInspect">
+  <soap12:operation soapAction="http://www.gc8848.com/StopInspect" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="EndInspect">
+  <soap12:operation soapAction="http://www.gc8848.com/EndInspect" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="UploadSelfTestData">
+  <soap12:operation soapAction="http://www.gc8848.com/UploadSelfTestData" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="UploadRealtimeData">
+  <soap12:operation soapAction="http://www.gc8848.com/UploadRealtimeData" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectionInfo">
+  <soap12:operation soapAction="http://www.gc8848.com/GetInspectionInfo" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="BeginCalibrate">
+  <soap12:operation soapAction="http://www.gc8848.com/BeginCalibrate" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="UploadCalibrateData">
+  <soap12:operation soapAction="http://www.gc8848.com/UploadCalibrateData" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="EndCalibrate">
+  <soap12:operation soapAction="http://www.gc8848.com/EndCalibrate" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="TestPhoto">
+  <soap12:operation soapAction="http://www.gc8848.com/TestPhoto" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="FuelEvaporationInspect">
+  <soap12:operation soapAction="http://www.gc8848.com/FuelEvaporationInspect" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetInspectParams">
+  <soap12:operation soapAction="http://www.gc8848.com/GetInspectParams" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetOtherInspectQueueByPlateID">
+  <soap12:operation soapAction="http://www.gc8848.com/GetOtherInspectQueueByPlateID" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="GetOtherInspectQueueByDate">
+  <soap12:operation soapAction="http://www.gc8848.com/GetOtherInspectQueueByDate" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="OBDInspect">
+  <soap12:operation soapAction="http://www.gc8848.com/OBDInspect" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+- <wsdl:operation name="OBDTXCheck">
+  <soap12:operation soapAction="http://www.gc8848.com/OBDTXCheck" style="document" /> 
+- <wsdl:input>
+  <soap12:body use="literal" /> 
+  </wsdl:input>
+- <wsdl:output>
+  <soap12:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation>
+  </wsdl:binding>
+- <wsdl:service name="Service">
+- <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+  <soap:address location="http://192.168.40.2:9002/gcservice/service.asmx" /> 
+  </wsdl:port>
+- <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+  <soap12:address location="http://192.168.40.2:9002/gcservice/service.asmx" /> 
+  </wsdl:port>
+  </wsdl:service>
+  </wsdl:definitions>
